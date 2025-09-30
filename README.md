@@ -16,5 +16,3 @@ This repo demonstrates GitHub Actions updating README.
 
 ## Other sections
 - Manual notes...
-
-Can using Jira close issue

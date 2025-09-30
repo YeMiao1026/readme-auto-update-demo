@@ -18,3 +18,6 @@ This repo demonstrates GitHub Actions updating README.
 
 ## 📌 Recent Activity
 <!-- AUTO-UPDATE-MARKER -->
+
+## CI Status
+[![Validate README](https://github.com/YeMiao1026/readme-auto-update-demo/actions/workflows/validate-readme.yml/badge.svg)](https://github.com/YeMiao1026/readme-auto-update-demo/actions/workflows/validate-readme.yml)

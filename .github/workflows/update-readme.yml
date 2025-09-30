@@ -2,8 +2,6 @@ name: Auto-update README
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: "0 0 * * *"  # 每天 00:00 UTC
 
 permissions:
   contents: read

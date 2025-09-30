@@ -1,10 +1,27 @@
-name: Validate README markers
-on: [pull_request, push]
+name: Validate README
+
+on:
+  pull_request:
+    paths:
+      - "README.md"
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
 jobs:
-  check:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: |
-          grep "<!-- AUTO-UPDATE-START -->" README.md
-          grep "<!-- AUTO-UPDATE-END -->" README.md
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check for required marker
+        run: |
+          if ! grep -q "<!-- AUTO-UPDATE-MARKER -->" README.md; then
+            echo "❌ README.md is missing the AUTO-UPDATE-MARKER"
+            exit 1
+          fi
+          echo "✅ README validation passed"
